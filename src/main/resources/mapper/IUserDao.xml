@@ -18,12 +18,4 @@
 
     </resultMap>
 
-    <!-- 查询单条记录 -->
-
-    <select id="selectUsers" resultMap="userMap">
-
-        SELECT * FROM test;
-
-    </select>
-
 </mapper>

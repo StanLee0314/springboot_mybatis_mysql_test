@@ -15,4 +15,22 @@ public class UserServiceImpl implements IUserService {
     public List<User> selectUsers() {
         return userDao.selectUsers();
     }
+
+    public User selectUserById(int id) {
+        return userDao.selectUserById(id);
+    }
+
+    public void addUser(User user) {
+        userDao.addUser(user);
+    }
+
+    @Override
+    public void deleteUser(int id) {
+        userDao.deleteUser(id);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userDao.updateUser(user);
+    }
 }

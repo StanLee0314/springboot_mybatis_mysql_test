@@ -15,8 +15,28 @@ import java.util.List;
 public class UserController {
     @Autowired
     private IUserService userService;
-    @RequestMapping(value = "/test")
-    public List<User> getUsers(){
+
+    @RequestMapping(value = "/allusers")
+    public List<User> getUsers() {
         return userService.selectUsers();
+    }
+
+    @RequestMapping(value = "/selectbyid")
+    public User selectUserById(String id) {
+        User user = userService.selectUserById(Integer.parseInt(id));
+        return user;
+    }
+
+    @RequestMapping(value = "/adduser")
+    public void addUser(User user) {
+        userService.addUser(user);
+    }
+    @RequestMapping(value = "/deleteuserbyid")
+    public void deleteUser(String id) {
+        userService.deleteUser(Integer.parseInt(id));
+    }
+    @RequestMapping(value = "/updateuser")
+    public void updateUser(User user) {
+        userService.updateUser(user);
     }
 }
