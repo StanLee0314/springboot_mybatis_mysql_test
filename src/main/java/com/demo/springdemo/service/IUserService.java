@@ -38,6 +38,7 @@ public interface IUserService {
     /**
      * 更新用户
      * @param user user对象
+     * @param id 用户id
      */
     void updateUser(User user);
 }
