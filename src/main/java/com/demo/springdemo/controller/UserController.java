@@ -29,7 +29,7 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "/adduser")
+    @RequestMapping(value = "/insertuser")
     public void addUser(User user) {
         userService.insertUser(user);
     }
