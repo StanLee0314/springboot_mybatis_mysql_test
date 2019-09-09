@@ -8,18 +8,24 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author 李宇轩
+ */
+@SuppressWarnings("ALL")
 @Service("userService")
 public class UserServiceImpl implements IUserService {
     @Autowired
     private IUserDao userDao;
+    @Override
     public List<User> selectUsers() {
         return userDao.selectUsers();
     }
 
+    @Override
     public User selectUserById(int id) {
         return userDao.selectUserById(id);
     }
-
+    @Override
     public void addUser(User user) {
         userDao.addUser(user);
     }

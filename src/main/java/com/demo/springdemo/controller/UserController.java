@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * @author 李宇轩
+ */
 @RestController
 @RequestMapping(value = "/test")
 @EnableAutoConfiguration
@@ -23,8 +26,8 @@ public class UserController {
 
     @RequestMapping(value = "/selectbyid")
     public User selectUserById(String id) {
-        User user = userService.selectUserById(Integer.parseInt(id));
-        return user;
+        return  userService.selectUserById(Integer.parseInt(id));
+
     }
 
     @RequestMapping(value = "/adduser")
