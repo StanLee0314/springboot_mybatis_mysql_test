@@ -13,26 +13,25 @@ import java.util.List;
  * @author 李宇轩
  */
 @RestController
-@RequestMapping(value = "/test")
-@EnableAutoConfiguration
+@RequestMapping(value = "/usercontroller/api/v1")
 public class UserController {
     @Autowired
     private IUserService userService;
 
-    @RequestMapping(value = "/allusers")
-    public List<User> getUsers() {
-        return userService.selectUsers();
+    @RequestMapping(value = "/users")
+     public List<User> listUsers() {
+        return userService.listUsers();
     }
 
-    @RequestMapping(value = "/selectbyid")
+    @RequestMapping(value = "/user")
     public User selectUserById(String id) {
-        return  userService.selectUserById(Integer.parseInt(id));
+        return  userService.getUserById(Integer.parseInt(id));
 
     }
 
     @RequestMapping(value = "/adduser")
     public void addUser(User user) {
-        userService.addUser(user);
+        userService.insertUser(user);
     }
     @RequestMapping(value = "/deleteuserbyid")
     public void deleteUser(String id) {

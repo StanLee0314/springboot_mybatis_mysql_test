@@ -17,17 +17,17 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private IUserDao userDao;
     @Override
-    public List<User> selectUsers() {
-        return userDao.selectUsers();
+    public List<User> listUsers() {
+        return userDao.listUsers();
     }
 
     @Override
-    public User selectUserById(int id) {
-        return userDao.selectUserById(id);
+    public User getUserById(int id) {
+        return userDao.getUserById(id);
     }
     @Override
-    public void addUser(User user) {
-        userDao.addUser(user);
+    public void insertUser(User user) {
+        userDao.insertUser(user);
     }
 
     @Override

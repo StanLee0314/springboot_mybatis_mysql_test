@@ -14,21 +14,21 @@ public interface IUserDao {
      * @return List<User>
      */
     @Select("select * from user")
-    List<User> selectUsers();
+    List<User> listUsers();
     /**
      * select a user by id
      * @param id
      * @return user信息
      */
     @Select("select * from user where id = #{id}")
-     User selectUserById(int id);
+     User getUserById(int id);
 
     /**
      * 添加用户
      * @param user
      */
     @Insert("insert into user(id,name,age) values(#{id},#{name},#{age})")
-     void addUser(User user);
+     void insertUser(User user);
 
     /**s
      * 删除用户

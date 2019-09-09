@@ -10,34 +10,34 @@ import java.util.List;
 public interface IUserService {
     /**
      * select all users from database
-     * @return List<User>
+     * @return List<User> 用户列表
      */
-    List<User> selectUsers();
+    List<User> listUsers();
 
     /**
      * select a user by id
-     * @param id
-     * userid
+     * @param id userid
      * @return user信息
      */
-    User selectUserById(int id);
+    User getUserById(int id);
 
     /**
      * 添加用户
      * @param user
+     * user对象
      */
-    void addUser(User user);
+    void insertUser(User user);
 
     /**s
      * 删除用户
-     * @param id
+     * @param id 用户id
      */
     void deleteUser(int id);
 
 
     /**
      * 更新用户
-     * @param user
+     * @param user user对象
      */
     void updateUser(User user);
 }
