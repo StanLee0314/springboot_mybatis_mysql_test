@@ -19,7 +19,7 @@ public interface IUserService {
      * @param id userid
      * @return user信息
      */
-    User getUserById(int id);
+    User  getUserById(int id);
 
     /**
      * 添加用户

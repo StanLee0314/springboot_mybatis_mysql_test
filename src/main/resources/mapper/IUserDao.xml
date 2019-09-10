@@ -8,7 +8,7 @@
 
     <!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->
 
-    <resultMap id="userMap" type="com.demo.springdemo.model.User">
+    <resultMap id="user" type="com.demo.springdemo.model.User">
 
         <result column="id" property="id"/>
 
@@ -17,5 +17,11 @@
         <result column="age" property="age"/>
 
     </resultMap>
+    <parameterMap id="user" type="com.demo.springdemo.model.User">
+
+    </parameterMap>
+    <select id="listUsers" resultMap="user">
+        SELECT * FROM USER
+    </select>
 
 </mapper>

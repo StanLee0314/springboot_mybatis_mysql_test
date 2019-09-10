@@ -2,7 +2,6 @@ package com.demo.springdemo.controller;
 
 import com.demo.springdemo.model.User;
 import com.demo.springdemo.service.IUserService;
-import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
@@ -33,10 +32,12 @@ public class UserController {
     public void addUser(User user) {
         userService.insertUser(user);
     }
+
     @DeleteMapping(value = "/delete/{id}")
     public void deleteUser( @PathVariable String id) {
         userService.deleteUser(Integer.parseInt(id));
     }
+
     @PostMapping(value = "/update/{id}")
     public void updateUser(@RequestBody User user) {
         userService.updateUser(user);

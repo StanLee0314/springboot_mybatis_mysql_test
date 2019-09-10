@@ -5,6 +5,7 @@ import com.demo.springdemo.model.User;
 import com.demo.springdemo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -23,20 +24,20 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User getUserById(int id) {
-        return userDao.getUserById(id);
+        return userDao.selectById(id);
     }
     @Override
     public void insertUser(User user) {
-        userDao.insertUser(user);
+        userDao.insert(user);
     }
 
     @Override
     public void deleteUser(int id) {
-        userDao.deleteUser(id);
+        userDao.deleteById(id);
     }
 
     @Override
     public void updateUser(User user) {
-        userDao.updateUser(user);
+        userDao.updateById(user);
     }
 }
