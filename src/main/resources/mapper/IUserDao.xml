@@ -10,16 +10,10 @@
 
     <resultMap id="user" type="com.demo.springdemo.model.User">
 
-        <result column="id" property="id"/>
-
-        <result column="name" property="name"/>
-
-        <result column="age" property="age"/>
-
     </resultMap>
-    <parameterMap id="user" type="com.demo.springdemo.model.User">
+<!--    <parameterMap id="user" type="com.demo.springdemo.model.User">-->
 
-    </parameterMap>
+<!--    </parameterMap>-->
     <select id="listUsers" resultMap="user">
         SELECT * FROM USER
     </select>
